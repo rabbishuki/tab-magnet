@@ -4,6 +4,8 @@
 
 Tab Magnet is a tiny Chrome extension that switches to an already-open tab instead of opening duplicate links.
 
+![Too many duplicate browser tabs](docs/tab-overload.png)
+
 ![Load Tab Magnet unpacked in Chrome](docs/load-unpacked.svg)
 
 ## Install from a release zip
