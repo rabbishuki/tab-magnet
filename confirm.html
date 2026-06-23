@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Tab Magnet</title>
+    <link rel="stylesheet" href="confirm.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Similar tab already open</h1>
+      <p>Choose how Tab Magnet should handle this link.</p>
+
+      <section>
+        <h2>New link</h2>
+        <code id="new-url"></code>
+      </section>
+
+      <section>
+        <h2>Open tab</h2>
+        <code id="existing-url"></code>
+      </section>
+
+      <footer>
+        <button id="keep">Use new tab + new path</button>
+        <button id="switch">Use old tab + old path</button>
+        <button id="reuse" autofocus>Use old tab + new path</button>
+      </footer>
+    </main>
+
+    <script src="confirm.js"></script>
+  </body>
+</html>

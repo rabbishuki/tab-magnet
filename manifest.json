@@ -1,0 +1,37 @@
+{
+  "manifest_version": 3,
+  "name": "Tab Magnet",
+  "version": "0.1.0",
+  "description": "Reuse open tabs instead of opening duplicate links.",
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "permissions": ["tabs", "storage"],
+  "host_permissions": [
+    "https://github.com/*",
+    "https://*.github.com/*",
+    "https://linear.app/*",
+    "https://*.linear.app/*",
+    "http://localhost/*",
+    "https://localhost/*",
+    "http://127.0.0.1/*",
+    "https://127.0.0.1/*"
+  ],
+  "optional_host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Tab Magnet settings",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "options_page": "options.html"
+}

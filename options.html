@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Tab Magnet Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Tab Magnet Settings</h1>
+      <p class="muted">By default, Tab Magnet runs on GitHub, Linear, localhost, and 127.0.0.1.</p>
+
+      <section>
+        <label class="checkbox">
+          <input id="all-sites" type="checkbox" />
+          <span>Run on all websites</span>
+        </label>
+        <p class="muted">This lets Tab Magnet compare URLs across every open tab. It still does not read page contents or make network requests.</p>
+      </section>
+
+      <section>
+        <h2>Additional sites</h2>
+        <form id="add-site-form">
+          <input id="host-input" placeholder="example.com" autocomplete="off" />
+          <button type="submit">Add site</button>
+        </form>
+        <ul id="host-list"></ul>
+      </section>
+
+      <p id="status" role="status"></p>
+    </main>
+
+    <script src="options.js"></script>
+  </body>
+</html>
