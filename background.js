@@ -67,7 +67,7 @@ async function checkTab(newTabId, rawUrl) {
   const similarMatch = candidates.find((tab) => isSimilarUrl(newUrl, normalizeUrl(tab.url)));
   if (similarMatch) {
     pendingPrompts.add(newTabId);
-    openConfirmWindow(newTabId, similarMatch.id, rawUrl, similarMatch.url);
+    await openConfirmWindow(newTabId, similarMatch.id, rawUrl, similarMatch.url);
   }
 }
 
@@ -134,7 +134,7 @@ async function closeTabIfPresent(tabId) {
   }
 }
 
-function openConfirmWindow(newTabId, existingTabId, newUrl, existingUrl) {
+async function openConfirmWindow(newTabId, existingTabId, newUrl, existingUrl) {
   const params = new URLSearchParams({
     newTabId: String(newTabId),
     existingTabId: String(existingTabId),
@@ -142,11 +142,30 @@ function openConfirmWindow(newTabId, existingTabId, newUrl, existingUrl) {
     existingUrl,
   });
 
+  const width = 600;
+  const height = 320;
+  const { left, top } = await getCenteredPopupPosition(newTabId, width, height);
+
   chrome.windows.create({
     url: chrome.runtime.getURL(`confirm.html?${params}`),
     type: 'popup',
-    width: 560,
-    height: 460,
+    width,
+    height,
+    left,
+    top,
     focused: true,
   });
+}
+
+async function getCenteredPopupPosition(tabId, width, height) {
+  try {
+    const tab = await chrome.tabs.get(tabId);
+    const window = await chrome.windows.get(tab.windowId);
+    return {
+      left: Math.round((window.left || 0) + ((window.width || width) - width) / 2),
+      top: Math.round((window.top || 0) + ((window.height || height) - height) / 2),
+    };
+  } catch (_) {
+    return {};
+  }
 }
