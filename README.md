@@ -6,13 +6,11 @@ Tab Magnet is a tiny Chrome extension that switches to an already-open tab inste
 
 ![Too many duplicate browser tabs](docs/tab-overload.png)
 
-![Load Tab Magnet unpacked in Chrome](docs/load-unpacked.svg)
-
 ## Install from a release zip
 
 1. Download the latest `tab-magnet.zip` from the [Releases page](../../releases/latest).
 2. Unzip it.
-3. Open `chrome://extensions`.
+3. Open [`chrome://extensions`](chrome://extensions).
 4. Enable **Developer mode**.
 5. Click **Load unpacked**.
 6. Select the unzipped `tab-magnet` folder.
@@ -20,7 +18,7 @@ Tab Magnet is a tiny Chrome extension that switches to an already-open tab inste
 ## Install from source
 
 1. Clone this repo.
-2. Open `chrome://extensions`.
+2. Open [`chrome://extensions`](chrome://extensions).
 3. Enable **Developer mode**.
 4. Click **Load unpacked**.
 5. Select this `tab-magnet` folder.
