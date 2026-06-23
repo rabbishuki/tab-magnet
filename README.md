@@ -27,9 +27,9 @@ Tab Magnet is a tiny Chrome extension that switches to an already-open tab inste
 
 - Exact URL match: automatically switches to the existing tab and closes the duplicate.
 - Similar URL match: asks whether to:
-  - use the old tab with the old path,
-  - use the old tab with the new path,
-  - or use the new tab with the new path.
+  - switch to the existing tab,
+  - update the existing tab to the new URL,
+  - or keep the new tab.
 
 ## Site access
 

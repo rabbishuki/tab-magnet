@@ -146,7 +146,7 @@ function openConfirmWindow(newTabId, existingTabId, newUrl, existingUrl) {
     url: chrome.runtime.getURL(`confirm.html?${params}`),
     type: 'popup',
     width: 560,
-    height: 360,
+    height: 460,
     focused: true,
   });
 }
